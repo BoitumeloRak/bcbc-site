@@ -1,6 +1,2 @@
-[build]
-publish = "/"
-[[redirects]]
-from = "/contact"
-to = "/.netlify/functions/submit-form"
-status = 200
+[functions]
+  directory = "functions"

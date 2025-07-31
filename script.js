@@ -113,9 +113,14 @@ if (form) {
       } else {
         e.preventDefault(); // Prevent default for custom handling
         const formData = new FormData(form);
-        fetch('/', {
+        fetch('/.netlify/functions/send-mail', {
           method: 'POST',
-          body: formData
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name,
+            email,
+            message: form.querySelector('#cf-message').value.trim()
+          })
         })
         .then(response => {
           if (response.ok) {

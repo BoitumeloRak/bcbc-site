@@ -176,20 +176,13 @@ and full of love.”<br><span style="font-size:0.95rem; color:#1e3a8a;">(Ephesia
   <section id="contact" data-aos="zoom-in">
   <h2>Contact Us</h2>
   <p class="contact-note" style="margin-top:1.2rem; text-align:center; color:#2563eb; font-weight:500;">Need to reach us? Fill out the form below and we’ll get back to you shortly.</p>
-  <form class="contact-form" data-netlify="true" name="contact" method="POST" netlify> <!-- -honeypot="bot-field"-->
-    <input type="hidden" name="form-name" value="contact" />
-    <p class="hidden">
-      <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
-    </p>
-    <label for="cf-name">Name</label>
-    <input type="text" id="cf-name" name="name" required aria-required="true" autocomplete="name" />
-    <label for="cf-email">Email</label>
-    <input type="email" id="cf-email" name="email" required aria-required="true" autocomplete="email" />
-    <label for="cf-message">Message</label>
-    <textarea id="cf-message" name="message" rows="4" required aria-required="true"></textarea>
-    <button type="submit" class="cta-btn" aria-label="Send Message">Send Message</button>
-    <div id="form-success" style="display: none; color: green; margin-top: 1rem;">Thank you! Your message has been sent.</div>
+  <form class="contact-form">
+    <input type="text" id="cf-name" placeholder="Your Name" required>
+    <input type="email" id="cf-email" placeholder="Your Email" required>
+    <textarea id="cf-message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button>
   </form>
+<div id="form-success" style="display:none; color:green;">Message sent successfully!</div>
 </section>
   <svg class="wave" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#1e3a8a" d="M0,64L48,74.7C96,85,192,107,288,117.3C384,128,480,128,576,112C672,96,768,64,864,53.3C960,43,1056,53,1152,69.3C1248,85,1344,107,1392,117.3L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
 
