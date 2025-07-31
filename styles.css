@@ -272,6 +272,27 @@ img {
   opacity: 1;
 }
 
+#programs table {
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+#programs th, #programs td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+#programs th {
+  background: #e0f2fe;
+  font-weight: 700;
+}
+#programs td {
+  background: #fff;
+}
+#programs tr:hover {
+  background: #f1f5f9;
+}
+
 @media (max-width: 700px) {
   .main-header {
     padding: 2.5rem 0.5rem 1.2rem 0.5rem;
@@ -288,6 +309,9 @@ img {
   .card-section .card-icon {
     font-size: 2rem;
     padding: 0.5rem 0.8rem;
+  }
+  #programs th, #programs td {
+    padding: 0.5rem;
   }
 }
 
@@ -319,6 +343,10 @@ img {
   }
   section, #about-founder {
     padding: 0.5rem;
+  }
+  #programs th, #programs td {
+    padding: 0.3rem;
+    font-size: 0.9rem;
   }
 }
 
