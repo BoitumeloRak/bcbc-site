@@ -111,12 +111,29 @@ if (form) {
         e.preventDefault();
         alert('Please fill out all fields with a valid email.');
       } else {
-        const success = document.getElementById('form-success');
-        if (success) {
-          success.style.display = 'block';
-          form.reset();
-          setTimeout(() => success.style.display = 'none', 5000);
-        }
+        e.preventDefault(); // Prevent default to handle Netlify submission
+        const formData = new FormData(form);
+        fetch('/', {
+          method: 'POST',
+          body: formData,
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        })
+        .then(response => {
+          if (response.ok) {
+            const success = document.getElementById('form-success');
+            if (success) {
+              success.style.display = 'block';
+              form.reset();
+              setTimeout(() => success.style.display = 'none', 5000);
+            }
+          } else {
+            alert('There was an issue submitting your form. Please try again.');
+          }
+        })
+        .catch(error => {
+          console.warn('Form submission error:', error);
+          alert('An error occurred. Please try again later.');
+        });
       }
     } catch (e) {
       console.warn('Form submission error:', e);

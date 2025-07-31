@@ -65,7 +65,7 @@ and full of love.”<br><span style="font-size:0.95rem; color:#1e3a8a;">(Ephesia
     <img src="https://scontent-jnb2-1.xx.fbcdn.net/v/t39.30808-6/490292636_9230338970407959_1365135605120537842_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=P683nGmfUmYQ7kNvwF_6qTi&_nc_oc=Adnmfz5S_lc_6l7oqbNJtOxS9dIo4jWZrDDNAu7Gf9mmfuSaZJQ4LOjplSXCHY7wbpE&_nc_zt=23&_nc_ht=scontent-jnb2-1.xx&_nc_gid=6aMaJFf0zzWWMa2muNA21A&oh=00_AfS6irJ6khGmlhJDJSYUra7CFT81AR-zDTrlmNozB_ERtQ&oe=6891287F" alt="Archbishop Mashego, Founder of Bearers of Christ Apostolic Church" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; background: #e5e7eb;" loading="lazy" />
     <div>
       <h2>About the Founder</h2>
-      <p id="founder-short"><strong>Archbishop Mashego</strong>  is the esteemed founder of Bearers of Christ Apostolic Church, with its headquarters in Daveyton and a branch in Tsakane. He earned his qualification in Ministry in 2017 and was ordained as a Bishop in 2022. Through his partnership with Team Impact Christian University, he extends his mission of equipping believers with accessible, Bible-based education. His life and leadership serve as a powerful testament to faith, vision, and dedicated service to the Kingdom of God.</p>
+      <p id="founder-short"><strong>Archbishop Mashego</strong> is the esteemed founder of Bearers of Christ Apostolic Church, with its headquarters in Daveyton and a branch in Tsakane. He earned his qualification in Ministry in 2017 and was ordained as a Bishop in 2022. Through his partnership with Team Impact Christian University, he extends his mission of equipping believers with accessible, Bible-based education. His life and leadership serve as a powerful testament to faith, vision, and dedicated service to the Kingdom of God.</p>
       <div id="founder-more" style="display:none;">
         <p>Archbishop Mashego’s journey reflects a deep commitment to spiritual growth and empowering others. His partnership with Team Impact Christian University ensures students receive quality education rooted in sound doctrine. He is deeply dedicated and hardworking man of God, passionately devoted to serving the Kingdom of God.</p>
       </div>
@@ -174,20 +174,23 @@ and full of love.”<br><span style="font-size:0.95rem; color:#1e3a8a;">(Ephesia
   </section>
 
   <section id="contact" data-aos="zoom-in">
-    <h2>Contact Us</h2>
-    <p class="contact-note" style="margin-top:1.2rem; text-align:center; color:#2563eb; font-weight:500;">Need to reach us? Fill out the form below and we’ll get back to you shortly.</p>
-    <form class="contact-form" data-netlify="true" name="contact" method="POST">
-      <input type="hidden" name="form-name" value="contact" />
-      <label for="cf-name">Name</label>
-      <input type="text" id="cf-name" name="name" required aria-required="true" autocomplete="name" />
-      <label for="cf-email">Email</label>
-      <input type="email" id="cf-email" name="email" required aria-required="true" autocomplete="email" />
-      <label for="cf-message">Message</label>
-      <textarea id="cf-message" name="message" rows="4" required aria-required="true"></textarea>
-      <button type="submit" class="cta-btn" aria-label="Send Message">Send Message</button>
-      <div id="form-success" style="display: none; color: green; margin-top: 1rem;">Thank you! Your message has been sent.</div>
-    </form>
-  </section>
+  <h2>Contact Us</h2>
+  <p class="contact-note" style="margin-top:1.2rem; text-align:center; color:#2563eb; font-weight:500;">Need to reach us? Fill out the form below and we’ll get back to you shortly.</p>
+  <form class="contact-form" data-netlify="true" name="contact" method="POST" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="contact" />
+    <p class="hidden">
+      <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+    </p>
+    <label for="cf-name">Name</label>
+    <input type="text" id="cf-name" name="name" required aria-required="true" autocomplete="name" />
+    <label for="cf-email">Email</label>
+    <input type="email" id="cf-email" name="email" required aria-required="true" autocomplete="email" />
+    <label for="cf-message">Message</label>
+    <textarea id="cf-message" name="message" rows="4" required aria-required="true"></textarea>
+    <button type="submit" class="cta-btn" aria-label="Send Message">Send Message</button>
+    <div id="form-success" style="display: none; color: green; margin-top: 1rem;">Thank you! Your message has been sent.</div>
+  </form>
+</section>
   <svg class="wave" viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#1e3a8a" d="M0,64L48,74.7C96,85,192,107,288,117.3C384,128,480,128,576,112C672,96,768,64,864,53.3C960,43,1056,53,1152,69.3C1248,85,1344,107,1392,117.3L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>
 
   <footer>
