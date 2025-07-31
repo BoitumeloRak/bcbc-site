@@ -111,12 +111,11 @@ if (form) {
         e.preventDefault();
         alert('Please fill out all fields with a valid email.');
       } else {
-        e.preventDefault(); // Prevent default to handle Netlify submission
+        e.preventDefault(); // Prevent default for custom handling
         const formData = new FormData(form);
         fetch('/', {
           method: 'POST',
-          body: formData,
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+          body: formData
         })
         .then(response => {
           if (response.ok) {
@@ -127,16 +126,16 @@ if (form) {
               setTimeout(() => success.style.display = 'none', 5000);
             }
           } else {
-            alert('There was an issue submitting your form. Please try again.');
+            throw new Error('Submission failed');
           }
         })
         .catch(error => {
           console.warn('Form submission error:', error);
-          alert('An error occurred. Please try again later.');
+          alert('There was an issue submitting your form. Please try again.');
         });
       }
     } catch (e) {
-      console.warn('Form submission error:', e);
+      console.warn('Form validation error:', e);
     }
   });
 } else {
