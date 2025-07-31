@@ -115,14 +115,17 @@ if (form) {
         const formData = new FormData(form);
         fetch('/.netlify/functions/send-mail', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: {
+            'Content-Type': 'application/json'
+          },
           body: JSON.stringify({
             name,
             email,
             message: form.querySelector('#cf-message').value.trim()
           })
         })
-        .then(response => {
+        .then(async (response) => {
+          const data = await response.json();
           if (response.ok) {
             const success = document.getElementById('form-success');
             if (success) {
@@ -131,12 +134,13 @@ if (form) {
               setTimeout(() => success.style.display = 'none', 5000);
             }
           } else {
-            throw new Error('Submission failed');
+            console.error('Error response from server:', data);
+            alert('There was an issue submitting your form. Please try again.');
           }
         })
         .catch(error => {
-          console.warn('Form submission error:', error);
-          alert('There was an issue submitting your form. Please try again.');
+          console.error('Form submission network error:', error);
+          alert('There was a network error. Please check your connection and try again.');
         });
       }
     } catch (e) {

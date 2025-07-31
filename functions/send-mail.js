@@ -1,30 +1,44 @@
+require('dotenv').config();
 const nodemailer = require('nodemailer');
 
-exports.handler = async (event, context) => {
+exports.handler = async (event) => {
+  console.log('Incoming request:', event.httpMethod);
+  
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' };
   }
 
-  const { name, email, message } = JSON.parse(event.body);
+  let name, email, message;
+  try {
+    ({ name, email, message } = JSON.parse(event.body));
+    console.log('Parsed body:', name, email, message);
+  } catch (err) {
+    console.error('Invalid JSON:', err);
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ error: 'Invalid request body' })
+    };
+  }
 
-  // Configure transporter (example with Gmail; use your own SMTP)
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-      user: process.env.EMAIL_USER, // e.g., yourname@gmail.com
-      pass: process.env.EMAIL_PASS, // App-specific password
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS,
     },
   });
 
   const mailOptions = {
     from: process.env.EMAIL_USER,
-    to: process.env.EMAIL_TO, // e.g., yourname@example.com
+    to: process.env.EMAIL_TO,
     subject: 'New Contact Form Submission',
     text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
   };
 
   try {
-    await transporter.sendMail(mailOptions);
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Mail sent:', info.response);
+
     return {
       statusCode: 200,
       body: JSON.stringify({ message: 'Email sent successfully' }),
