@@ -8,6 +8,7 @@ This is the official website for Bearers of Christ Bible College, built with HTM
 - Direct WhatsApp and Email contact buttons
 - Programs and contact information
 
+
 ## How to View
 Open `index.html` in your browser, or visit the live site (if published with GitHub Pages).
 
