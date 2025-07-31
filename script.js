@@ -169,3 +169,17 @@ if (form) {
     console.warn('Navigation toggle or links not found');
   }
 })();
+// Optional: Dynamic WhatsApp link based on form inputs
+const whatsappBtn = document.getElementById("whatsapp-button");
+if (whatsappBtn) {
+  form?.addEventListener("input", () => {
+    const name = form.querySelector("#cf-name")?.value.trim();
+    const message = form.querySelector("#cf-message")?.value.trim();
+
+    const baseLink = "https://wa.me/27831234567";
+    const query = `Hi, my name is ${name || "Anonymous"}. ${message || "I would like to learn more about your programs."}`;
+    const encoded = encodeURIComponent(query);
+
+    whatsappBtn.href = `${baseLink}?text=${encoded}`;
+  });
+}
