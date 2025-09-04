@@ -1,6 +1,6 @@
 # Bearers of Christ Bible College Website
 
-This is the official website for Bearers of Christ Bible College, built with HTML, CSS, and JavaScript.
+This is the official website for Bearers of Christ Bible College, built with HTML, CSS, and JavaScript, Node.js
 
 ## Features
 - Responsive, modern design
@@ -11,10 +11,8 @@ This is the official website for Bearers of Christ Bible College, built with HTM
 
 ## How to View
 Open `index.html` in your browser, or visit the live site (if published with GitHub Pages).
+https://bcbc-website.netlify.app/
 
-## Contact
-- WhatsApp: [Replace with your number]
-- Email: [Replace with your email]
 
 ---
 
